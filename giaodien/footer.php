@@ -30,19 +30,19 @@
                 <ul class="info">
                     <li>
                         <span><i class="fa fa-map-marker"></i></span>
-                        <span>Đường Số 1<br />
-                            Quận 1, Thành Phố Hồ Chí Minh<br />
+                        <span>Đường Điện Biên Phủ<br />
+                            Quận Bình Thạnh, Thành Phố Hồ Chí Minh<br />
                             Việt Nam</span>
                     </li>
                     <li>
                         <span><i class="fa fa-phone"></i></span>
                         <p><a href="#">+84 123 456 789</a>
                             <br />
-                            <a href="#">+84 987 654 321</a></p>
+                            <a href="#">+84 385 231 251</a></p>
                     </li>
                     <li>
                         <span><i class="fa fa-envelope"></i></span>
-                        <p><a href="#">diachiemail@gmail.com</a></p>
+                        <p><a href="#">nguyenhien111101@gmail.com</a></p>
                    </li>
                     <li>
                         <form class="form">
