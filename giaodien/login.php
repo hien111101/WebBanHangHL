@@ -22,39 +22,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <title>Login | Ludiflex - youtube channel</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container main">
-            <div class="row">
-                <div class="col-md-6 side-image">
-                    <!-------Image-------->
-                    <img src="images/loginlogo.png" alt="">
-                    
-                </div>
-                <div class="col-md-6 right">
-                     <div class="input-box">
-                        <header>Create account</header>
-                        <div class="input-field">
-                            <input type="text" class="input" id="email" required autocomplete="off">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="password" class="input" id="password" required>
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="submit" class="submit" value="Sign Up">
-                            
-                        </div>
-                        <div class="signin">
-                            <span>Already have an account? <a href="#">Log in here</a></span>
-                        </div>
-                     </div>
-                </div>
-            </div>
-        </div>
+<div class="login-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 login-image">
+        <img src="images/loginlogo.png" alt="Login Image">
+      </div>
+      <div class="col-md-6 login-form-container">
+        <h1>Login</h1>
+        <form class="login-form" action="">
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="remember-me">
+            <label class="form-check-label" for="remember-me">Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <div class="form-group">
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
+
 </body>
 </html>
