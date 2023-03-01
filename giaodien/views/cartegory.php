@@ -13,7 +13,7 @@
 <body>
     <!------header------>
     <?php
-        include(("header.php"))
+        include(("./shares/header.php"))
     ?>
     
     <!------slider------>
@@ -23,10 +23,10 @@
     
     <!---------footer--------->
     <?php
-        include(("footer.php"));
+        include(("./shares/footer.php"));
     ?>
 </body>
 <!------script cho slider------>
-<script src="js/cartegoty.js"></script>
+<script src="../js/cartegoty.js"></script>
 
 </html>

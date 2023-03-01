@@ -1,6 +1,6 @@
 <header>
         <div class="logo">
-            <img src="images/logo.jpg" alt="">
+            <img src="../images/logo.jpg" alt="">
         </div>
         <div class="menu">
             <li><a href="index.php">Trang chủ</a> </li>

@@ -13,7 +13,7 @@
 <body>
     <!------header------>
     <?php
-        include(("header.php"))
+        include(("./shares/header.php"))
     ?>
     
     <!------slider------>
@@ -62,7 +62,7 @@
                     
                 </tr>
                 <tr>
-                    <td><img src="images/item-1.png" alt=""></td>
+                    <td><img src="../images/item-1.png" alt=""></td>
                     <td><h1>Gel - Body shampoo Acqua Di Gio</h1></td>
                     <td><img src="...color" alt=""></td>
                     <td><p>L</p></td>
@@ -72,7 +72,7 @@
                     
                 </tr>
                 <tr>
-                    <td><img src="images/item-1.png" alt=""></td>
+                    <td><img src="../images/item-1.png" alt=""></td>
                     <td><h1>Gel - Body shampoo Acqua Di Gio</h1></td>
                     <td><img src="...color" alt=""></td>
                     <td><p>L</p></td>
@@ -82,7 +82,7 @@
                     
                 </tr>
                 <tr>
-                    <td><img src="images/item-1.png" alt=""></td>
+                    <td><img src="../images/item-1.png" alt=""></td>
                     <td><h1>Gel - Body shampoo Acqua Di Gio</h1></td>
                     <td><img src="...color" alt=""></td>
                     <td><p>L</p></td>
@@ -129,7 +129,7 @@
 
     <!---------footer--------->
     <?php
-        include(("footer.php"));
+        include(("./shares/footer.php"));
     ?>
 </body>
 <!------script cho slider------>

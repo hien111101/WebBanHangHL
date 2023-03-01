@@ -13,21 +13,21 @@
 <body>
     <!------header------>
     <?php
-        include(("header.php"))
+        include(("./shares/header.php"));
     ?>
     
     <!------slider------>
     <?php
-        include(("slider.php"));
+        include(("./slider.php"));
     ?>
     <?php
-        include(("main.php"));
+        include(("./main.php"));
     ?>
     <!---------footer--------->
     <?php
-        include(("footer.php"));
+        include(("./shares/footer.php"));
     ?>
 </body>
 <!------script cho slider------>
-<script src="js/slider.js"></script>
+<script src="../js/slider.js"></script>
 </html>
