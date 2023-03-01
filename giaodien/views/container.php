@@ -31,9 +31,11 @@
                     </div>
                     <div class="cartegory-right-content row">
                         <div class="cartegory-right-content-item">
-                            <img src="../images/item-1.png" alt="">
-                            <h1>Gel - Body shampoo Acqua Di Gio</h1>
-                            <p>295.000 <sup>đ</sup></p>
+                            <a href="../views/product.php">
+                                <img src="../images/item-1.png" alt="">
+                                <h1>Gel - Body shampoo Acqua Di Gio</h1>
+                                <p>295.000 <sup>đ</sup></p>
+                            </a>
                         </div>
                         <div class="cartegory-right-content-item">
                             <img src="../images/item-1.png" alt="">
