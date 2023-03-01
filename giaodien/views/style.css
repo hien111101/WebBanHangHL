@@ -801,3 +801,28 @@ footer .container .noi-dung.about p{
     color: black;
 }
 /* cart */
+.login-page{
+    margin-top:40px; height:700px; background-color:#fff3d4
+}
+
+.login-form-container{
+    margin-top:30px
+}
+
+.form-control{
+    height:30px;
+}
+
+.form-group{
+    margin-bottom:10px;
+}
+
+.form-group-signup{
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.form-group-login{
+    margin-bottom:10px;
+    text-align:center;
+}
