@@ -7,8 +7,22 @@
         <div class="container">
             <div class="row">
                 <div style="background-color: #3CB371; ;margin-bottom: 20px; border-radius: 10px;" class="cartegory-left">
-                    <ul>
-                        <li  class="cartegory-left-li" style="margin-left: 10px;" ><a href="#">Danh sách sản phẩm</a> 
+                    <ul style="font-size:1rem;font-weight: bold!important;padding: 20px 0 0 20px; "> Danh sách Sản phẩm
+                        <li  class="cartegory-left-li" style="margin-left: 10px;" ><a href="#">Nước hoa nam</a> 
+                            <ul>
+                                <li ><a href="">Nước hoa nam</a></li>
+                                <li ><a href="">Nước hoa nữ</a></li>
+                                <li ><a href="">Unisex</a></li>
+                            </ul>
+                        </li>
+                        <li  class="cartegory-left-li" style="margin-left: 10px;" ><a href="#">Nước hoa nữ</a> 
+                            <ul>
+                                <li ><a href="">Nước hoa nam</a></li>
+                                <li ><a href="">Nước hoa nữ</a></li>
+                                <li ><a href="">Unisex</a></li>
+                            </ul>
+                        </li>
+                        <li  class="cartegory-left-li" style="margin-left: 10px;" ><a href="#">Unisex</a> 
                             <ul>
                                 <li ><a href="">Nước hoa nam</a></li>
                                 <li ><a href="">Nước hoa nữ</a></li>

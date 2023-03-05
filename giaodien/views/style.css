@@ -564,6 +564,15 @@ footer .container .noi-dung.about p{
     display: block;
 }
 
+.cartegory-left-lief ul{
+    display: none;
+    
+}
+
+.cartegory-left-lief.block ul{
+    display: block;
+}
+
 .cartegory-left ul li ul li a{
     color:#333333;
     font-size: 12px;
