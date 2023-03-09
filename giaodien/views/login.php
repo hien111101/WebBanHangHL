@@ -1,18 +1,11 @@
-<?php
+<!-- <?php
     session_start();
     ob_start();
     include "../model/config.php";
     include "../model/user.php";
 
-    if((isset($_POST['dangnhap']))&&($_POST['dangnhap'])){
-        $username=$_POST['user'];
-        $password=$_POST['pass'];
-        $role=checkuser($username,$password);
-        $_SESSION['role']=$role;
-        if($role==1) header('location: index.php');
-        else header('location: login.php');
-    }
-?>
+    
+?> -->
 <!-- login form -->
 <!DOCTYPE html>
 <html lang="en">

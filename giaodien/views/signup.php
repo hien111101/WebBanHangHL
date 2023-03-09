@@ -1,3 +1,19 @@
+<?php
+include "../model/user.php";
+
+$username = new user;
+if($_SERVER['REQUEST_METHOD']=== 'POST'){
+    $user = $_POST['user'];
+    $DiaChi = $_POST['DiaChi'];
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
+    $phone = $_POST['phone'];
+    $HoVaTen = $_POST['HoVaTen'];
+    $insert_user = $username ->insert_user($HoVaTen,$DiaChi,$email,$user,$pass,$phone);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,26 +40,26 @@
       </div>
       <div class="col-md-6 login-form-container" >
         <h1 style="text-align:center;">Sign Up</h1>
-        <form class="login-form" action="">
+        <form class="login-form" method="POST" action="">
           <div class="form-group" >
-            <input type="text" class="form-control" id="user" placeholder="UserName">
+            <input required name="user" type="text" class="form-control" id="user" placeholder="UserName">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input required name="pass" type="password" class="form-control" id="pass" placeholder="Password">
           </div>
           <div class="form-group" >
-            <input type="Email" class="form-control" id="email" placeholder="Email">
+            <input required name="email" type="Email" class="form-control" id="email" placeholder="Email">
           </div><div class="form-group" >
-            <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+            <input required name="phone" type="text" class="form-control" id="phone" placeholder="Phone Number">
           </div>
           <div class="form-group" >
-            <input type="text" class="form-control" id="name" placeholder="Your Name">
+            <input required name="HoVaTen" type="text" class="form-control" id="HoVaTen" placeholder="Your Name">
           </div>
           <div class="form-group" >
-            <input type="text" class="form-control" id="address" placeholder="Address">
+            <input required name="DiaChi" type="text" class="form-control" id="DiaChi" placeholder="Address">
           </div>
           <div class="form-group-signup" >
-            <button type="submit" style="height:30px;width:100px" class="btn btn-primary">Sign Up</button>
+            <button  type="submit" style="height:30px;width:100px" class="btn btn-primary">Sign Up</button>
           </div>         
         </form>
       </div>

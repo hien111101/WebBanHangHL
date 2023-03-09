@@ -16,5 +16,11 @@
                         <Li><a href="./productlist.php">Danh sách sản phẩm</a></Li>
                     </ul>
                 </li>
+                <li><a href="#">người dùng</a>
+                    <ul>
+                        <Li><a href="./userlist.php">Danh sách sản phẩm</a></Li>
+                        <Li><a href="./useradd.php">Thêm người dùng</a></Li>
+                    </ul>
+                </li>
             </ul>
         </div>

@@ -52,7 +52,7 @@
                 <ul>
                     <div class="sub-menu-user">
                         <li><a href="./login.php">Đăng nhập</a> </li>
-                        <li><a href="">Đăng kí</a></li>
+                        <li><a href="./signup.php">Đăng kí</a></li>
                     </div>
                 </ul>
             </li>   
