@@ -1029,3 +1029,35 @@ footer .container .noi-dung.about p{
 .tab-content>.tab-pane{display:none}
 .tab-content>.active{display:block}
 .nav-tabs.dropdown-menu{margin-top:-1px;border-top-left-radius:0;border-top-right-radius:0}
+
+/* San-Pham-Lien-Quan */
+.product-related {
+    margin-bottom: 50px;
+}
+.product-related-title {
+    margin: 20px 0;
+}
+.product-related-title p {
+    font-family: var(--main-text-font);
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+}
+.product-related-item {
+    width: 20%;
+    text-align: center;
+    padding: 0 6px;
+}
+.product-related-item img {
+    width: 100%;
+}
+.product-related-item h1 {
+    font-family: var(--main-text-font);
+    font-size: 11px;
+    color: #333333;
+    margin-top: 6px;
+}
+.product-related-item p {
+    font-size: 12px;
+    text-decoration: line-through;
+}

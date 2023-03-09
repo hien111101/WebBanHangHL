@@ -123,6 +123,45 @@
                     
         </div>
     </section>
+
+
+    <!-- product-realated -->
+    <section class="product-related container">
+        <div class="product-related-title">
+            <p>SẢN PHẨM LIÊN QUAN</p>
+        </div>
+        <div class="row product-content">
+            <div class="product-related-item">
+                <img src="../images/item-1.png" alt="">
+                <h1>Gel - Body shampoo Acqua Di Gio</h1>
+                <p>295.000 <sup>đ</sup></p>
+            </div>
+
+            <div class="product-related-item">
+                <img src="../images/item-1.png" alt="">
+                <h1>Gel - Body shampoo Acqua Di Gio</h1>
+                <p>295.000 <sup>đ</sup></p>
+            </div>
+
+            <div class="product-related-item">
+                <img src="../images/item-1.png" alt="">
+                <h1>Gel - Body shampoo Acqua Di Gio</h1>
+                <p>295.000 <sup>đ</sup></p>
+            </div>
+
+            <div class="product-related-item">
+                <img src="../images/item-1.png" alt="">
+                <h1>Gel - Body shampoo Acqua Di Gio</h1>
+                <p>295.000 <sup>đ</sup></p>
+            </div>
+
+            <div class="product-related-item">
+                <img src="../images/item-1.png" alt="">
+                <h1>Gel - Body shampoo Acqua Di Gio</h1>
+                <p>295.000 <sup>đ</sup></p>
+            </div>
+        </div>
+    </section>
     <!---------footer--------->
     <?php
         include(("./shares/footer.php"));
