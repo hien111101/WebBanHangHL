@@ -1,11 +1,3 @@
-<!-- <?php
-    session_start();
-    ob_start();
-    include "../model/config.php";
-    include "../model/user.php";
-
-    
-?> -->
 <!-- login form -->
 <!DOCTYPE html>
 <html lang="en">
@@ -32,19 +24,19 @@
       </div>
       <div class="col-md-6 login-form-container" >
         <h1 style="text-align:center;">Login</h1>
-        <form class="login-form" action="">
+        <form class="login-form" method="POST" action="checkuser.php">
           <div class="form-group" >
-            <input type="text" class="form-control" id="user" placeholder="UserName">
+            <input name="user" type="text" class="form-control" id="user" placeholder="UserName">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input name="pass" type="password" class="form-control" id="pass" placeholder="Password">
           </div>
           <div class="form-group form-check" >
             <input type="checkbox" class="form-check-input" id="remember-me">
             <label class="form-check-label" for="remember-me">Remember me</label>
           </div>
           <div class="form-group-login" >
-            <button type="submit" style="height:30px;width:100px" class="btn btn-primary">Login</button>
+            <button type="submit" name="dangnhap" style="height:30px;width:100px" class="btn btn-primary">Login</button>
           </div>
           <div class="form-group-login">
             <a href="#" class="forgot-password">Forgot password?</a>

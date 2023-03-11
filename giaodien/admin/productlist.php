@@ -40,7 +40,7 @@ $show_product = $product->show_product();
                         <td><?php echo $result['product_price']?></td>
                         <td><?php echo $result['product_price_new']?></td>
                         <td><?php echo $result['product_desc']?></td>
-                        <td><?php echo $result['product_img']?></td>
+                        <td><img width="100" height="20" src="../admin/uploads/<?php echo $result['product_img']?> " ></td>
                         <td>
                         <a href="productedit.php?product_id=<?php
                         echo $result['product_id']?>">Sửa</a>| 

@@ -36,7 +36,7 @@ $show_user = $username->show_user();
                     <tr>
                         <td><?php echo $i?></td>
                         <td><?php echo $result['user']?></td>
-                        <td><?php echo md5($result['pass'])?></td>
+                        <td><?php echo ($result['pass'])?></td>
                         <td><?php echo $result['HoVaTen']?></td>
                         <td><?php echo $result['email']?></td>
                         <td><?php echo $result['DiaChi']?></td>

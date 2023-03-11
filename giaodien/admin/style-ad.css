@@ -1,0 +1,55 @@
+.login-page {
+    background-color: #F4ABB4;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-top: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .container {
+    height: 100%;
+  }
+  
+  .login-form-container {
+    background-color: #FDF3F4;
+    padding: 100px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    border-radius: 10px;
+  }
+  
+  .login-form-container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .login-image {
+    background-image: url("images/loginlogo.png");
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .login-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .forgot-password {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .row{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+    
+    

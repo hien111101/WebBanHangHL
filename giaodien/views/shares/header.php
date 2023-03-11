@@ -49,13 +49,33 @@
         <div class="others">
             <li><input type="text" placeholder="Tìm kiếm"><i class="fas fa-search"></i></li>
             <li><a href="" class="fa fa-user"></a>
+            <?php
+                    session_start();
+                if(isset($_GET['action'])=='dangxuat'){
+                    unset($_SESSION['dangnhap']);
+                    session_destroy();
+                    header('location:login.php');
+                    exit();
+                } 
+                
+            ?>
+            
                 <ul>
                     <div class="sub-menu-user">
-                        <li><a href="./login.php">Đăng nhập</a> </li>
-                        <li><a href="./signup.php">Đăng kí</a></li>
+                        <?php
+                            if(!((isset($_SESSION["user"])))== true ){
+                                echo '<li><a href="./login.php">Đăng nhập</a> </li>';
+                                echo '<li><a href="./signup.php">Đăng kí</a></li>';
+}
+                            else{
+                                echo 'Welcome '.$_SESSION['user'];
+                                echo '<li><a href="index.php?action=dangxuat">Đăng xuất</a></li>';
+                            }
+                        ?>
                     </div>
                 </ul>
-            </li>   
-            <li><a href="" class="fa fa-shopping-bag"></a></li>
+            </li> 
+            
+            <li><a href="./cart.php" class="fa fa-shopping-bag"></a></li>
         </div>
     </header>

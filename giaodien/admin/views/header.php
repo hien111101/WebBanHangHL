@@ -12,5 +12,22 @@
 </head>
 <body>
     <header>
-        <h1>Top</h1>
+    <?php
+    if(isset($_GET['action'])=='dangxuat'){
+        unset($_SESSION['dangnhap']);
+        header('location:login.php');
+    } 
+    session_start();
+    
+?>
+<div class="admin">
+    <div style="background-color:#7FFFD4;height:97px;font-size:1.2rem;font-weight: bold" class="admin-header">
+        <ul>
+            <?php echo 'Welcome '.$_SESSION['user'];?>
+            <li><a href="index.php?action=dangxuat">Đăng xuất</a></li>
+        </ul>
+    </div>
+    
+
+</div>
     </header>

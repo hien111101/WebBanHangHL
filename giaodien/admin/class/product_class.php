@@ -70,7 +70,7 @@ class product{
                 
             }
         
-        // header('location:cartegorylist.php');
+        header('location:productlist.php');
         return $result;
     }
     public function show_product(){
