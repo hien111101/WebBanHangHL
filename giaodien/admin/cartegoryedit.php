@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD']=== 'POST'){
             <div class="admin-content-right-cartegory_add">
                 <h1>Sửa danh mục</h1>
                 <form action="" method="POST">
-                    <input required name="cartegory_name" type="text" placeholder="Nhập tên danh mục">
+                    <input required name="cartegory_name" type="text" value="<?php echo $result['cartegory_name']?>" placeholder="Nhập tên danh mục">
                     <button type="submit">Sửa</button>
                 </form>
             </div>

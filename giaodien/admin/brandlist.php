@@ -17,7 +17,7 @@ $show_brand = $brand->show_brand();
     border-radius: 0;height: 30px;
     float:right;
     width:190px;
-    text-align:center;" href="./cartegoryadd.php" item-id="25">
+    text-align:center;" href="./brandadd.php" item-id="25">
                         <i class="fa fa-cart-plus"></i> Thêm sản phẩm 
                 </a></h1>
                 

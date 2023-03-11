@@ -1,36 +1,60 @@
+<?php
+include("../class/product_class.php");
+?>
+<?php
+$product = new product;
+$show_product = $product->show_product();
+$show_brand = $product->show_brand();
+
+?>
+<?php
+require_once('connectdb.php');
+if(isset($_GET["search"]) && !empty($_GET["search"])){
+    $key = $_GET["search"];
+    $sql = "SELECT * FROM tbl_product WHERE product_id LIKE '%$key%' OR product_name LIKE
+    '%$key%' OR product_price LIKE '%$key%' OR product_img LIKE '%$key%'";
+}
+else{
+    $sql = "SELECT * FROM tbl_product";
+}
+$result = mysqli_query($con,$sql);
+?>
 <header>
+
         <div class="logo">
             <img src="../images/logo.jpg" alt="">
         </div>
         <div class="menu">
+
             <li><a href="index.php">Trang chủ</a> </li>
             <li><a href="">Giới thiệu</a> </li>
             <li><a href="cartegory.php">Sản phẩm</a>
                 <ul>
                     <div class="sub-menu">
-                        <li><a href="">Nước hoa nam</a>
+                    <?php
+                        if($show_brand){
+                            $i=0;
+                            while($result = $show_brand ->fetch_assoc())
+                            {
+                               $i++;
+                    ?>
+                        <li><a href="cartegory.php?product_id=<?php
+                        echo $result['brand_id']?>"><?php echo $result['brand_name']?></a>
                             <ul>
-                                <li><a href="">Nước hoa</a> </li>
-                                <li><a href="">Giftset</a> </li>
-                                <li><a href="">Lăn khử mùi</a> </li>
-                                <li><a href="">Mỹ phẩm</a> </li>
+                                <li><a href="#"><?php
+                        echo $result['brand_name'] = 'Nước hoa'?></a> </li>
+                                <li><a href="#"><?php
+                        echo $result['brand_name'] = 'Giftset'?></a> </li>
+                                <li><a href="#"><?php
+                        echo $result['brand_name'] = 'Lăn khử mùi'?></a> </li>
+                                <li><a href="#"><?php
+                        echo $result['brand_name'] = 'Mỹ phẩm'?></a> </li>
                             </ul>
                         </li>
-                        <li><a href="">Nước hoa nữ</a>
-                            <ul>
-                                <li><a href=""> Nước hoa</a></li>
-                                <li><a href="">Giftset</a> </li>
-                                <li><a href="">Lăn khử mùi</a> </li>
-                                <li><a href="">Mỹ phẩm</a> </li>
-                            </ul>
-                        </li>
-                        <li><a href="">Unisex</a>
-                            <ul>
-                                <li><a href="">Nước hoa xe hơi</a> </li>
-                                <li><a href="">Nước hoa</a> </li>
-                                <li><a href="">Mỹ phẩm</a> </li>
-                            </ul>
-                        </li>
+                        <?php
+                            }
+                            }?>
+                    
                     </div>
                 </ul>
             
@@ -47,10 +71,12 @@
             <li><a href="">Liên hệ</a> </li>
         </div>
         <div class="others">
-            <li><input type="text" placeholder="Tìm kiếm"><i class="fas fa-search"></i></li>
+            <li><form action="" method="GET">
+            <input type="text" name="search" value="<?php if(isset($_GET["search"])){echo $_GET["search"];}?>" placeholder="Tìm kiếm"><i class="fas fa-search"></i>
+            </form></li>
             <li><a href="" class="fa fa-user"></a>
             <?php
-                    session_start();
+                    
                 if(isset($_GET['action'])=='dangxuat'){
                     unset($_SESSION['dangnhap']);
                     session_destroy();

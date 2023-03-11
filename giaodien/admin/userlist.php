@@ -8,7 +8,7 @@ $username = new user;
 $show_user = $username->show_user();
 ?>
         <div class="admin-content-right ">
-        <div class="admin-content-right-user_list ">
+        <div class="admin-content-right-cartegory_list ">
                 <h1>Danh sách danh mục <a class="btn btn-default btn-cart btn-pay btn-add-cart-two" style="
                 " href="./useradd.php" item-id="25">
                         <i class="fa fa-cart-plus"></i> Thêm danh mục 
@@ -23,7 +23,6 @@ $show_user = $username->show_user();
                         <th>Email</th>
                         <th>Địa chỉ</th>
                         <th>Số điện thoại</th>
-                        <th>Role</th>
                         <th>Tùy biến</th>
                     </tr>
                     <?php
@@ -41,7 +40,6 @@ $show_user = $username->show_user();
                         <td><?php echo $result['email']?></td>
                         <td><?php echo $result['DiaChi']?></td>
                         <td><?php echo $result['phone']?></td>
-                        <td><?php echo $result['role']?></td>
                         <td>
                         <a href="useredit.php?user_id=<?php
                         echo $result['user_id']?>">Sửa</a>| 

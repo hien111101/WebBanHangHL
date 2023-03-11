@@ -1,3 +1,20 @@
+
+<?php
+
+include(("./shares/header.php"));
+
+$product = new product;
+$product_id =$_GET['product_id'];
+$show_product = $product->show_product();
+
+$get_product = $product-> get_product($product_id);
+    if($get_product){
+        $resultA = $get_product ->fetch_assoc();
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,36 +31,50 @@
 </head>
 <body>
     <!------header------>
-    <?php
-        include(("./shares/header.php"));
-    ?>
+    
     
     <!------slider------>
     
-    <section class="product">
+    <section class="product" >
         <div class="container">
-            <div class="product-top row">
-                <p style="font-size: 1rem; font-weight: bold;">Trang chủ</p><span style="font-weight: bold;">&#10230;</span><p style="font-size: 1rem; font-weight: bold">Sản phẩm</p>
+
+
+
+            <div class="product-top row" style="background-color:#00FA9A; height: 60px; padding-top:25px; border-radius: 10px;">
+                <p style="font-size: 1rem; font-weight: bold;">Trang chủ</p><span style="font-weight: bold;">&#10230;</span><p style="font-size: 1rem; font-weight: bold">Sản phẩm</p><span style="font-weight: bold;">&#10230;</span><p style="font-size: 1rem; font-weight: bold"><?php echo $resultA['product_name']?></p>
             </div>
             <div class="product-content row">
                 <div class="product-content-left">
                     <div class="product-content-left-big-img">
-                        <img src="../images/item-1.png" alt="">
+                    <img  src="../admin/uploads/<?php echo $resultA['product_img']?> " >
                     </div>
                     <div class="product-content-left-small-img">
-                            <img src="../images/item-1.png" alt="">
-                            <img src="../images/item-1.png" alt="">
+                        <?php
+                        $get_product_img_desc = $product-> get_product_img_desc($product_id);
+                        if($get_product_img_desc){
+                            if($get_product_img_desc){
+                                               
+                                while($resultB = $get_product_img_desc ->fetch_assoc())
+                                {
+                        
+                            
+                    ?>
+                        
+                    <img src="../admin/uploads/<?php echo $resultB['product_img_desc']?> " >
+                    <?php
+                                }}}
+                    ?>
                     </div>
                 </div>
                 
                 <div class="product-content-right">
                     <div class="product-content-right-product-name">
-                        <h1>Gel - Body shampoo Acqua Di Gio (Italya, Hương thơm Dương xỉ - Aromatic Fougere, Eau Fraiche)</h1>
+                        <h1><?php echo $resultA['product_name']?></h1>
                         <p>Mã sản phẩm: NH_00337 | Thương hiệu: Varsace</p>
                     </div>
                     <div class="product-content-right-product-price">
-                        <p class="product-content-right-product-price-new">295,000 <sup>đ</sup></p> <!-- giá new -->
-                        <p class="product-content-right-product-price-old">430,000 <sup>đ</sup></p>
+                        <p class="product-content-right-product-price-new"><?php echo $resultA['product_price_new']?> <sup>đ</sup></p> <!-- giá new -->
+                        <p class="product-content-right-product-price-old"><?php echo $resultA['product_price']?> <sup>đ</sup></p>
                     </div>
                     <div class="product-content-right-product-detail">
                         <ul>
@@ -88,7 +119,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row1">
+            <div class="row1" >
                 <div class="bottom-detail-product">
                     <ul class="nav_title clearfix row nav-tabs"  role="tablist"id="myTab">
                         <li class="active" role="presentation"> 
@@ -100,23 +131,14 @@
                             <a data-toggle="tab" href="#comment" data-bs-toggle="tab" data-bs-target="#comment" role="tab" aria-expanded="false">Bình luận</a>
                         </li>
                     </ul>
-                    <div class="tab-content">
+                    <div class="tab-content" >
                         <div id="content" class="tab-pane fade in active" aria-labelledby="content-tab"> 
-                            <p>Acqua Di Gio Pour Homme được lấy cảm hứng từ những gì tinh túy nhất của biển khơi, ánh mặt trời, đất mẹ và những cơn gió lồng lộng của những hòn đảo miền biển Địa Trung Hải.
-                                <br>* Với hương thơm tinh khiết, ngào ngạt và nồng nàn mùi gỗ, mùi hương thoang thoảng của gió biển, quả chín, và cây cỏ, Acqua Di Gio Pour Homme là sự thể hiện rõ ràng nhất của nam tính ở mỗi người đàn ông.
-                                <br>* Bộ 4 món: 2100K
-                                <br>+ Nước hoa nam Acqua Di Gio EDT (100ml + 20ml)
-                                <br>+ Gel tắm - All Over Body Shampoo (75ml)
-                                <br>+ Kem thơm - After Shave Balm (75ml)&nbsp;
-                                <br>* Bộ 3 món: 1.750K
-                                <br>+ Nước hoa nam Acqua Di Gio EDT (100ml + 20ml)
-                                <br>+ Gel tắm - All Over Body Shampoo (75ml)
-                                <br>+ Kem thơm - After Shave Balm (75ml)&nbsp;
+                            <p><?php echo $resultA['product_desc']?>
                             </p>
-                            <p style="text-align: center;"><img src="../images/item-1.png" alt="" width="600" height="600"></p>
-                            <p style="text-align: center;"><em>Gel - Body shampoo Acqua Di Gio</em></p>
+                            <p style="text-align: center;"><img src="../admin/uploads/<?php echo $resultA['product_img']?> " width="600" height="600"></p>
+                            <p style="text-align: center;"><em><?php echo $resultA['product_name']?></em></p>
                         </div>
-                        <div id="highlight" class="tab-pane fade" aria-labelledby="highlight-tab">h1123 </div>
+                        <div id="highlight" class="tab-pane fade" aria-labelledby="highlight-tab"></div>
                         <div id="condition" class="tab-pane fade"aria-labelledby="condition-tab"> </div>
                         <div id="comment" class="tab-pane fade"aria-labelledby="comment-tab"> </div>
                     </div></div>
@@ -126,41 +148,36 @@
 
 
     <!-- product-realated -->
-    <section class="product-related container">
-        <div class="product-related-title">
-            <p>SẢN PHẨM LIÊN QUAN</p>
+    <section class="product-related container" style="margin-top:500px; ">
+    <div class="product-releated-all" style="display: inline-block;">
+        <div class="product-related-title row"  >
+                <p>SẢN PHẨM LIÊN QUAN</p>
         </div>
-        <div class="row product-content">
-            <div class="product-related-item">
-                <img src="../images/item-1.png" alt="">
-                <h1>Gel - Body shampoo Acqua Di Gio</h1>
-                <p>295.000 <sup>đ</sup></p>
-            </div>
+            <div class="product-content"  >
+                <div class="product-related-item">
+                        <ul style="display: flex; " >
+                            <?php
+                                if($show_product){
+                                    $i=0;
+                                    while($result = $show_product ->fetch_assoc())
+                                    {
+                                    $i++;
+                                
+                            ?>
+                            <li >
+                            <img width="240" height="200" src="../admin/uploads/<?php echo $result['product_img']?> " >
+                                <h1><?php echo $result['product_name']?></h1>
+                                <p>295.000 <sup>đ</sup></p>
+                            </li>
+                            <?php
+                                }}
+                            ?>
 
-            <div class="product-related-item">
-                <img src="../images/item-1.png" alt="">
-                <h1>Gel - Body shampoo Acqua Di Gio</h1>
-                <p>295.000 <sup>đ</sup></p>
+                        </ul>
+                </div>
             </div>
-
-            <div class="product-related-item">
-                <img src="../images/item-1.png" alt="">
-                <h1>Gel - Body shampoo Acqua Di Gio</h1>
-                <p>295.000 <sup>đ</sup></p>
-            </div>
-
-            <div class="product-related-item">
-                <img src="../images/item-1.png" alt="">
-                <h1>Gel - Body shampoo Acqua Di Gio</h1>
-                <p>295.000 <sup>đ</sup></p>
-            </div>
-
-            <div class="product-related-item">
-                <img src="../images/item-1.png" alt="">
-                <h1>Gel - Body shampoo Acqua Di Gio</h1>
-                <p>295.000 <sup>đ</sup></p>
-            </div>
-        </div>
+    </div>
+        
     </section>
     <!---------footer--------->
     <?php
