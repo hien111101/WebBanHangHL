@@ -18,8 +18,17 @@
                 </li>
                 <li><a href="#">người dùng</a>
                     <ul>
-                        <Li><a href="./userlist.php">Danh sách sản phẩm</a></Li>
-                        <Li><a href="./useradd.php">Thêm người dùng</a></Li>
+                        <Li><a href="./userlist.php">Danh sách người dùng</a></Li>
+                    </ul>
+                </li>
+                <li><a href="#">Loại Tin tức</a>
+                    <ul>
+                        <Li><a href="./loaitintuclist.php">Danh sách tin tức</a></Li>
+                    </ul>
+                </li>
+                <li><a href="#">Tin tức</a>
+                    <ul>
+                        <Li><a href="./tintuclist.php">Danh sách tin tức</a></Li>
                     </ul>
                 </li>
             </ul>

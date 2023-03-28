@@ -1,11 +1,18 @@
 <?php
-include("../class/product_class.php");
+include_once("../class/product_class.php");
+include_once("../class/loaitintuc_class.php");
+include_once("../class/tintuc_class.php");
+
 ?>
+
 <?php
 $product = new product;
 $show_product = $product->show_product();
 $show_brand = $product->show_brand();
-
+$show_brandA = $product->show_brand();
+$tintuc = new tintuc;
+$show_tintuc = $tintuc->show_tintuc();
+$show_tintucA = $tintuc->show_tintuc();
 ?>
 <?php
 require_once('connectdb.php');
@@ -28,7 +35,18 @@ $result = mysqli_query($con,$sql);
 
             <li><a href="index.php">Trang chủ</a> </li>
             <li><a href="">Giới thiệu</a> </li>
-            <li><a href="cartegory.php">Sản phẩm</a>
+            <li>
+            <?php
+                        if($show_brandA){
+                            
+                            $resultA = $show_brandA ->fetch_assoc()
+                               
+                    ?>
+                <a href="cartegory.php?product_id=<?php
+                        echo $resultA['brand_id']?>">Sản phẩm
+                        <?php
+                            
+                            }?>
                 <ul>
                     <div class="sub-menu">
                     <?php
@@ -40,16 +58,7 @@ $result = mysqli_query($con,$sql);
                     ?>
                         <li><a href="cartegory.php?product_id=<?php
                         echo $result['brand_id']?>"><?php echo $result['brand_name']?></a>
-                            <ul>
-                                <li><a href="#"><?php
-                        echo $result['brand_name'] = 'Nước hoa'?></a> </li>
-                                <li><a href="#"><?php
-                        echo $result['brand_name'] = 'Giftset'?></a> </li>
-                                <li><a href="#"><?php
-                        echo $result['brand_name'] = 'Lăn khử mùi'?></a> </li>
-                                <li><a href="#"><?php
-                        echo $result['brand_name'] = 'Mỹ phẩm'?></a> </li>
-                            </ul>
+                            
                         </li>
                         <?php
                             }
@@ -57,26 +66,49 @@ $result = mysqli_query($con,$sql);
                     
                     </div>
                 </ul>
-            
+                </a>
             
             </li>
-            <li><a href="">Tin tức</a> 
+            <li> <?php
+           
+                        if($show_tintuc){
+                            
+                            $resultA = $show_tintuc ->fetch_assoc()
+                               
+                    ?>
+                <a href="tintuc.php?tentintuc_id=<?php
+                        echo $resultA['tintuc_id']?>">Tin tức
+                        <?php
+                            
+                            }?>
                 <ul>
                     <div class="sub-menu-tintuc">
-                        <li><a href="">Kinh nghiệm chọn nước hoa</a></li>
-                        <li><a href="">Tin khuyến mãi</a></li>
+                    <?php
+                        if($show_tintucA){
+                            $i=0;
+                            while($result = $show_tintucA ->fetch_assoc())
+                            {
+                               $i++;
+                    ?>
+                        <li><a href="tintuc.php?tentintuc_id=<?php
+                        echo $result['tintuc_id']?>"><?php echo $result['tintuc_name']?></a>
+                            
+                        </li>
+                        <?php
+                            }
+                            }?>
+                    
+                    
                     </div>
                 </ul>
             </li>
             <li><a href="">Liên hệ</a> </li>
         </div>
         <div class="others">
-            <li><form action="" method="GET">
-            <input type="text" name="search" value="<?php if(isset($_GET["search"])){echo $_GET["search"];}?>" placeholder="Tìm kiếm"><i class="fas fa-search"></i>
-            </form></li>
+            <li><input type="text" placeholder="Tìm kiếm"><i class="fas fa-search"></i></li>
             <li><a href="" class="fa fa-user"></a>
             <?php
-                    
+                    session_start();
                 if(isset($_GET['action'])=='dangxuat'){
                     unset($_SESSION['dangnhap']);
                     session_destroy();
@@ -92,9 +124,12 @@ $result = mysqli_query($con,$sql);
                             if(!((isset($_SESSION["user"])))== true ){
                                 echo '<li><a href="./login.php">Đăng nhập</a> </li>';
                                 echo '<li><a href="./signup.php">Đăng kí</a></li>';
-}
+                                
+                                
+                            }
                             else{
                                 echo 'Welcome '.$_SESSION['user'];
+                                echo '<li><a href="infomation.php">Thay đổi mật khẩu</a></li>';
                                 echo '<li><a href="index.php?action=dangxuat">Đăng xuất</a></li>';
                             }
                         ?>

@@ -4,11 +4,11 @@ $product = new product;
 $show_product = $product->show_product();
 ?>
 
-<div class="container">
-<section class="product-related container" style="margin-top:500px; ">
+<div class="container" style="text-align:center">
+<section class="product-related container" style="margin-top:30px; ">
     <div class="product-releated-all" style="display: inline-block;">
         <div class="product-related-title row"  >
-                <p>SẢN PHẨM LIÊN QUAN</p>
+                <p style="font-size:2rem">SẢN PHẨM LIÊN QUAN</p>
         </div>
             <div class="product-content"  >
                 <div class="product-related-item">

@@ -1,3 +1,21 @@
+<?php
+
+
+
+
+if(isset($_POST['Addcart'])){
+    $soluong=1; 
+    $product_id =$_GET['product_id'];
+    $query = "SELECT * FROM tbl_product WHERE product_id = '".$product_id."' LIMIT 1";
+    if($resultA){
+            
+    }
+    
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +38,7 @@
     <?php
         include(("slider.php"));
     ?>
-    <?php
-        include(("main.php"));
-    ?>
+
 
 
     <!-- cart -->

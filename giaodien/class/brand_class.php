@@ -1,5 +1,5 @@
 <?php
-include(("./model/database.php"));
+include_once(("./model/database.php"));
 ?>
 
 <?php

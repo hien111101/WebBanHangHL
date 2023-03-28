@@ -1,5 +1,5 @@
 <?php
-include(("../model/database.php"));
+include_once(("../model/database.php"));
 ?>
 
 <?php
@@ -80,6 +80,14 @@ class product{
         $result = $this ->db->select($query);
         return $result;
     }
+
+    public function get_productA(){
+        $query = "SELECT * FROM tbl_product,tbl_brand WHERE tbl_product.brand_id = tbl_brand.brand_id 
+        AND tbl_product.brand_id =  '$_GET[product_id]' ORDER BY tbl_product.product_id DESC";
+        $result = $this ->db->select($query);
+        return $result;
+    }
+
     public function show_brand(){
         $query = "SELECT tbl_brand.*, tbl_cartegory.cartegory_name FROM tbl_brand 
         INNER JOIN tbl_cartegory ON tbl_brand.cartegory_id = tbl_cartegory.cartegory_id
@@ -125,6 +133,7 @@ class product{
         $result = $this ->db->select($query);
         return $result;
     }
+
     public function delete_product($product_id){
         $query = "DELETE FROM tbl_product WHERE product_id = '$product_id'";
         $result = $this ->db->delete($query);

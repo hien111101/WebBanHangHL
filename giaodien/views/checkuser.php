@@ -13,7 +13,6 @@ if(isset($_POST['dangnhap'])){
             header("location:index.php");
         }else{
         header("location:login.php?Invalid = Please enter corret username and password");
-
         }
 
     }

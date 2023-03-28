@@ -67,5 +67,9 @@ if($_SERVER['REQUEST_METHOD']=== 'POST'){
             </div>
         </div>
     </section>
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+    <script type="text/javascript">
+    CKEDITOR.replace( 'editor1' );
+    </script>
 </body>
 </html>

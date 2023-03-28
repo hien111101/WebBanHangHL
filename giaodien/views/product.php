@@ -30,10 +30,6 @@ $get_product = $product-> get_product($product_id);
     <title>Trang chủ HL</title>
 </head>
 <body>
-    <!------header------>
-    
-    
-    <!------slider------>
     
     <section class="product" >
         <div class="container">
@@ -43,82 +39,85 @@ $get_product = $product-> get_product($product_id);
             <div class="product-top row" style="background-color:#00FA9A; height: 60px; padding-top:25px; border-radius: 10px;">
                 <p style="font-size: 1rem; font-weight: bold;">Trang chủ</p><span style="font-weight: bold;">&#10230;</span><p style="font-size: 1rem; font-weight: bold">Sản phẩm</p><span style="font-weight: bold;">&#10230;</span><p style="font-size: 1rem; font-weight: bold"><?php echo $resultA['product_name']?></p>
             </div>
-            <div class="product-content row">
-                <div class="product-content-left">
-                    <div class="product-content-left-big-img">
-                    <img  src="../admin/uploads/<?php echo $resultA['product_img']?> " >
-                    </div>
-                    <div class="product-content-left-small-img">
-                        <?php
-                        $get_product_img_desc = $product-> get_product_img_desc($product_id);
-                        if($get_product_img_desc){
+            <form method="POST" action="cart.php?product_id=<?php echo $resultA['product_id']?>">
+                <div class="product-content row">
+                    <div class="product-content-left">
+                        <div class="product-content-left-big-img">
+                        <img  src="../admin/uploads/<?php echo $resultA['product_img']?> " >
+                        </div>
+                        <div class="product-content-left-small-img">
+                            <?php
+                            $get_product_img_desc = $product-> get_product_img_desc($product_id);
                             if($get_product_img_desc){
-                                               
-                                while($resultB = $get_product_img_desc ->fetch_assoc())
-                                {
-                        
+                                if($get_product_img_desc){
+                                                
+                                    while($resultB = $get_product_img_desc ->fetch_assoc())
+                                    {
                             
-                    ?>
+                                
+                        ?>
+                            
+                        <img src="../admin/uploads/<?php echo $resultB['product_img_desc']?> " >
+                        <?php
+                                    }}}
+                        ?>
+                        </div>
+                    </div>
+                    
+                    <div class="product-content-right">
+                        <div class="product-content-right-product-name">
+                            <h1><?php echo $resultA['product_name']?></h1>
+                            <p>Mã sản phẩm: NH_00337 | Thương hiệu: Varsace</p>
+                        </div>
+                        <div class="product-content-right-product-price">
+                            <p class="product-content-right-product-price-new"><?php echo $resultA['product_price_new']?> <sup>đ</sup></p> <!-- giá new -->
+                            <p class="product-content-right-product-price-old"><?php echo $resultA['product_price']?> <sup>đ</sup></p>
+                        </div>
+                        <div class="product-content-right-product-detail">
+                            <ul>
+                                <li>Nhãn hiệu: Nuoc Hoa Xe Hoi</li>
+                                <li>Giới tính: Nam</li>
+                                <li>Xuất xứ: Ý</li>
+                                <li>Mùi hương: Hương thơm Dương Xỉ</li>
+                                <li>Nồng độ: Parfum Classic</li>
+                            </ul>
+                        </div>
+                        <div class="product-content-right-available">
+                            <div class="group-available noPadding">
+                                <div class="a-row">
+                                    <label for="">Mùi hương:</label>
+                                    <span class="selection">
+                                        Hương thơm Dương xỉ - Aromatic Fougere
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="group-available noPadding">
+                                <div class="a-row">
+                                    <label for="">Nồng độ: </label>
+                                        <span class="selection">
+                                            Eau Fraiche
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="group-available noPadding">
+                                <div class="a-row">
+                                    <label for="">Xuất xứ: </label>
+                                        <span class="selection">
+                                            Italya
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quantity">
+                            <p style="font-weight:bold">Số lượng: <input type="number" min="0" value="1"></p>
+                        </div>
+                        <p>
+                            <input class="btn btn-default btn-cart btn-pay btn-add-cart-two" name="Addcart" type="submit"  item-id="25" value="Thêm vào giỏ hàng">  
+                        </p>
                         
-                    <img src="../admin/uploads/<?php echo $resultB['product_img_desc']?> " >
-                    <?php
-                                }}}
-                    ?>
                     </div>
                 </div>
-                
-                <div class="product-content-right">
-                    <div class="product-content-right-product-name">
-                        <h1><?php echo $resultA['product_name']?></h1>
-                        <p>Mã sản phẩm: NH_00337 | Thương hiệu: Varsace</p>
-                    </div>
-                    <div class="product-content-right-product-price">
-                        <p class="product-content-right-product-price-new"><?php echo $resultA['product_price_new']?> <sup>đ</sup></p> <!-- giá new -->
-                        <p class="product-content-right-product-price-old"><?php echo $resultA['product_price']?> <sup>đ</sup></p>
-                    </div>
-                    <div class="product-content-right-product-detail">
-                        <ul>
-                            <li>Nhãn hiệu: Nuoc Hoa Xe Hoi</li>
-                            <li>Giới tính: Nam</li>
-                            <li>Xuất xứ: Ý</li>
-                            <li>Mùi hương: Hương thơm Dương Xỉ</li>
-                            <li>Nồng độ: Parfum Classic</li>
-                        </ul>
-                    </div>
-                    <div class="product-content-right-available">
-                        <div class="group-available noPadding">
-                            <div class="a-row">
-                                <label for="">Mùi hương:</label>
-                                <span class="selection">
-                                    Hương thơm Dương xỉ - Aromatic Fougere
-                                </span>
-                            </div>
-                        </div>
-                        <div class="group-available noPadding">
-                            <div class="a-row">
-                                <label for="">Nồng độ: </label>
-                                    <span class="selection">
-                                        Eau Fraiche
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="group-available noPadding">
-                            <div class="a-row">
-                                <label for="">Xuất xứ: </label>
-                                    <span class="selection">
-                                        Italya
-                                    </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="quantity">
-                        <p style="font-weight:bold">Số lượng: <input type="number" min="0" value="1"></p>
-                    </div>
-                    <a class="btn btn-default btn-cart btn-pay btn-add-cart-two" item-id="25">
-                        <i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng 
-                    </a>
-                </div>
-            </div>
+            </form>
             <div class="row1" >
                 <div class="bottom-detail-product">
                     <ul class="nav_title clearfix row nav-tabs"  role="tablist"id="myTab">
@@ -148,7 +147,7 @@ $get_product = $product-> get_product($product_id);
 
 
     <!-- product-realated -->
-    <section class="product-related container" style="margin-top:500px; ">
+    <section class="product-related container" style="margin-top:900px; ">
     <div class="product-releated-all" style="display: inline-block;">
         <div class="product-related-title row"  >
                 <p>SẢN PHẨM LIÊN QUAN</p>

@@ -26,10 +26,10 @@
         <h1 style="text-align:center;">Login</h1>
         <form class="login-form" method="POST" action="checkuser.php">
           <div class="form-group" >
-            <input name="user" type="text" class="form-control" id="user" placeholder="UserName">
+            <input required name="user" type="text" class="form-control" id="user" placeholder="UserName">
           </div>
           <div class="form-group">
-            <input name="pass" type="password" class="form-control" id="pass" placeholder="Password">
+            <input required name="pass" type="password" class="form-control" id="pass" placeholder="Password">
           </div>
           <div class="form-group form-check" >
             <input type="checkbox" class="form-check-input" id="remember-me">

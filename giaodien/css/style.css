@@ -590,7 +590,7 @@ footer .container .noi-dung.about p{
   }
   
   .container {
-    height: 70%;
+    height: 60%;
   }
   
   .login-form-container {
@@ -1235,6 +1235,7 @@ footer .container .noi-dung.about p{
     margin-bottom: 30px;
 }
 
+
 .home-product-item__name{
     font-size: 1.4rem;
     color: var(--text-color);
@@ -1277,3 +1278,4 @@ footer .container .noi-dung.about p{
     margin-left: -5px;
     margin-right: -5px;
 }
+
